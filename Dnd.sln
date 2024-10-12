@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dnd", "Dnd\Dnd.csproj", "{C060DC5A-A5FE-4486-9F1A-9901B86CDC1C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C060DC5A-A5FE-4486-9F1A-9901B86CDC1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C060DC5A-A5FE-4486-9F1A-9901B86CDC1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C060DC5A-A5FE-4486-9F1A-9901B86CDC1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C060DC5A-A5FE-4486-9F1A-9901B86CDC1C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
