@@ -3,7 +3,7 @@
     public class Player
     {
         private Room currentRoom;
-        private int attackDamage;
+        public int attackDamage;
         public int HP;
         private int maxHP;
         private float critRate;
@@ -11,6 +11,7 @@
         public int smallpotionCount = 1;
         public int bigpotionCount = 1;
         public int mediumpotionCount = 1;
+        
         
         
 
@@ -34,7 +35,8 @@
         {
             if (currentRoom.HasEnemy()) 
             {
-                Enemy enemy = currentRoom.GetEnemy(); 
+                Enemy enemy = currentRoom.GetEnemy();
+                Upgrades upgrade = new Upgrades();
 
                 if (enemy != null)
                 {
@@ -45,6 +47,8 @@
                     {
                         enemy.HP = 0;
                         Console.WriteLine($"{enemy.Name} has been defeated!");
+                        upgrade.Upgrade();
+                        
                     }
                     else
                     {
@@ -137,7 +141,7 @@
         {
             public static Player CreateGnom()
             {
-                return new Player(Room.RoomFactory.CreateHub(), 10, 20, 30, 10, 6);
+                return new Player(Room.RoomFactory.CreateHub(), 5, 20, 30, 10, 6);
             }
 
             public static Player CreateKouzelnik()
@@ -146,7 +150,7 @@
             }
             public static Player CreateRytir()
             {
-                return new Player(Room.RoomFactory.CreateHub(), 10,20, 30, 10, 6);
+                return new Player(Room.RoomFactory.CreateHub(), 5,20, 30, 10, 6);
             }
             
         }
