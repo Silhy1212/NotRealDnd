@@ -11,174 +11,180 @@ public class ActionInput
     
 
     public void PlayerInput()
-    {
-        Console.WriteLine("Co chces byt za roli?");
-        Console.WriteLine("1 - Kouzelnik");
-        Console.WriteLine("2 - Rytir");
-        Console.WriteLine("3 - Gnom");
-
-        int startup = Convert.ToInt32(Console.ReadLine());
-
-            
-        if (startup == 1)
-        {
-            Player = Player.Factory.CreateKouzelnik();
-            Console.WriteLine("Uspesne se z vas stal kouzelnik");
-        }
-        else if (startup == 2)
-        {
-            Player = Player.Factory.CreateRytir();
-            Console.WriteLine("Uspesne se z vas stal rytir");
-        }
-        else if (startup == 3)
-        {
-            Player = Player.Factory.CreateGnom();
-            Console.WriteLine("Uspesne se z vas stal gnom");
-        }
-        else
-        {
-            Console.WriteLine("Tak ses asi kokot kliknul jsi na spatne tlacitko");
-        }
-        while (startup >3)
-        {
-            startup = Convert.ToInt32(Console.ReadLine());
-            if (startup == 1)
-            {
-                Player = Player.Factory.CreateKouzelnik();
-                Console.WriteLine("Uspesne se z vas stal kouzelnik");
-                    
-            }
-            else if (startup == 2)
-            {
-                Player = Player.Factory.CreateRytir();
-                Console.WriteLine("Uspesne se z vas stal rytir");
-            }
-            else if (startup == 3)
-            {
-                Player = Player.Factory.CreateGnom();
-                Console.WriteLine("Uspesne se z vas stal gnom");
-            }
-            else
-            {
-                Console.WriteLine("Tak ses asi kokot kliknul jsi na spatne tlacitko");
-            }
-        }
-        Console.Clear();
-       
-    }
-
-    public void RoomsInput()
-    {
-        startRoom = Room.RoomFactory.CreateHub();
-        ezRoom = Room.RoomFactory.CreateEnemyRoom();
-        midRoom = Room.RoomFactory.CreateEnemyRoom();
-        hardRoom = Room.RoomFactory.CreateEnemyRoom();
-        bossRoom = Room.RoomFactory.CreateBossRoom();
-    }
-    
-    public void ActionsInput() 
-    {
-        
-        Console.WriteLine("Co chcete delat dale??");
-        Console.WriteLine("1 - Vyhealovat se");
-        Console.WriteLine("2 - Zautocit");
-        Console.WriteLine("3 - Presunout se do jine mistnosti");
-        
-        int action = Convert.ToInt32(Console.ReadLine());
-        Console.Clear();
-        if (action == 1)
-        {
-            Console.WriteLine("Jaky potion si chcete dat");
-            Console.WriteLine("1 - Small = 10");
-            Console.WriteLine("2 - Medium = 20");
-            Console.WriteLine("3 - Big = 30");
-            
-            int healchoice = Convert.ToInt32(Console.ReadLine());
-            Console.Clear();
-            switch (healchoice)
-            {
-                case 1: Player.Heal(Potions.small);
-                    Player.smallpotionCount--; break;
-                case 2: Player.Heal(Potions.medium);
-                    Player.mediumpotionCount--; break;
-                case 3: Player.Heal(Potions.big);
-                    Player.bigpotionCount--;break;
-            }
-            
-                
-        }
-        else if (action == 2)
-        {
-            
-            Player.Attack();
-            
-               
-        }
-        else if (action == 3)
         {
             Console.Clear();
-            Console.WriteLine("In which room do you want to go?");
-            Console.WriteLine("1 - Start room");
-            Console.WriteLine("2 - Easy enemy room");
-            Console.WriteLine("3 - Intermediate enemy room");
-            Console.WriteLine("4 - Hard enemy room");
-            Console.WriteLine("5 - Boss room");
+            Console.WriteLine("=======================================");
+            Console.WriteLine("VÍTEJTE VE HŘE! VYBERTE SI SVOU ROLI:");
+            Console.WriteLine("=======================================");
+            Console.WriteLine("1 - Kouzelnik");
+            Console.WriteLine("2 - Rytir");
+            Console.WriteLine("3 - Gnom");
+            Console.WriteLine("=======================================");
+
+            int startup = Convert.ToInt32(Console.ReadLine());
+
+            while (startup < 1 || startup > 3)
+            {
+                Console.Clear();
+                Console.WriteLine("ŠPATNÁ VOLBA! ZKUSTE TO ZNOVU.");
+                Console.WriteLine("1 - Kouzelnik");
+                Console.WriteLine("2 - Rytir");
+                Console.WriteLine("3 - Gnom");
+                startup = Convert.ToInt32(Console.ReadLine());
+            }
+
+            switch (startup)
+            {
+                case 1:
+                    Player = Player.Factory.CreateKouzelnik();
+                    Console.Clear();
+                    Console.WriteLine("=======================================");
+                    Console.WriteLine("Uspěšně se z vás stal Kouzelník!");
+                    Console.WriteLine("=======================================");
+                    break;
+                case 2:
+                    Player = Player.Factory.CreateRytir();
+                    Console.Clear();
+                    Console.WriteLine("=======================================");
+                    Console.WriteLine("Uspěšně se z vás stal Rytíř!");
+                    Console.WriteLine("=======================================");
+                    break;
+                case 3:
+                    Player = Player.Factory.CreateGnom();
+                    Console.Clear();
+                    Console.WriteLine("=======================================");
+                    Console.WriteLine("Uspěšně se z vás stal Gnom!");
+                    Console.WriteLine("=======================================");
+                    break;
+            }
+
+            Console.WriteLine("Tiskněte libovolnou klávesu pro pokračování...");
+            Console.ReadKey();
+            Console.Clear();
+        }
+
+        public void RoomsInput()
+        {
+            startRoom = Room.RoomFactory.CreateHub();
+            ezRoom = Room.RoomFactory.CreateEnemyRoom();
+            midRoom = Room.RoomFactory.CreateEnemyRoom();
+            hardRoom = Room.RoomFactory.CreateEnemyRoom();
+            bossRoom = Room.RoomFactory.CreateBossRoom();
+        }
+
+        public void ActionsInput()
+        {
+            Console.Clear();
+            Console.WriteLine("=======================================");
+            Console.WriteLine("CO CHCETE DĚLAT DÁLE?");
+            Console.WriteLine("1 - Vyhealovat se");
+            Console.WriteLine("2 - Zautočit");
+            Console.WriteLine("3 - Přesunout se do jiné místnosti");
+            Console.WriteLine("=======================================");
+
+            int action = Convert.ToInt32(Console.ReadLine());
+
+            while (action < 1 || action > 3)
+            {
+                Console.Clear();
+                Console.WriteLine("Neplatná volba, zkuste to znovu.");
+                action = Convert.ToInt32(Console.ReadLine());
+            }
+
+            Console.Clear();
+            switch (action)
+            {
+                case 1:
+                    HandleHealing();
+                    break;
+                case 2:
+                    Player.Attack();
+                    break;
+                case 3:
+                    HandleMovement();
+                    break;
+            }
+
+            Console.WriteLine("Tiskněte libovolnou klávesu pro pokračování...");
+            Console.ReadKey();
+            Console.Clear();
+        }
+
+        private void HandleHealing()
+        {
+            Console.Clear();
+            Console.WriteLine("=======================================");
+            Console.WriteLine("JAKÝ POTION SI CHCETE VZÍT?");
+            Console.WriteLine("1 - Small (10 HP)");
+            Console.WriteLine("2 - Medium (20 HP)");
+            Console.WriteLine("3 - Big (30 HP)");
+            Console.WriteLine("=======================================");
+
+            int healChoice = Convert.ToInt32(Console.ReadLine());
+
+            Console.Clear();
+            switch (healChoice)
+            {
+                case 1:
+                    Player.Heal(Potions.small);
+                    Player.smallpotionCount--;
+                    break;
+                case 2:
+                    Player.Heal(Potions.medium);
+                    Player.mediumpotionCount--;
+                    break;
+                case 3:
+                    Player.Heal(Potions.big);
+                    Player.bigpotionCount--;
+                    break;
+                default:
+                    Console.WriteLine("Neplatná volba.");
+                    break;
+            }
+        }
+
+        private void HandleMovement()
+        {
+            Console.Clear();
+            Console.WriteLine("=======================================");
+            Console.WriteLine("DO KTERÉ MÍSTNOSTI SE CHCETE PŘESUNOUT?");
+            Console.WriteLine("1 - Startovní místnost");
+            Console.WriteLine("2 - Lehčí nepřátelská místnost");
+            Console.WriteLine("3 - Střední nepřátelská místnost");
+            Console.WriteLine("4 - Těžká nepřátelská místnost");
+            Console.WriteLine("5 - Boss místnost");
+            Console.WriteLine("=======================================");
+
             int move = Convert.ToInt32(Console.ReadLine());
+
+            Console.Clear();
             switch (move)
             {
-                case 1: Player.Move(startRoom);
+                case 1:
+                    Player.Move(startRoom);
+                    Console.WriteLine("Přesunuli jste se do Startovní místnosti.");
                     break;
-                case 2: Player.Move(ezRoom);
+                case 2:
+                    Player.Move(ezRoom);
+                    Console.WriteLine("Přesunuli jste se do Lehčí nepřátelské místnosti.");
                     break;
-                case 3: Player.Move(midRoom);
+                case 3:
+                    Player.Move(midRoom);
+                    Console.WriteLine("Přesunuli jste se do Střední nepřátelské místnosti.");
                     break;
-                case 4: Player.Move(hardRoom);
+                case 4:
+                    Player.Move(hardRoom);
+                    Console.WriteLine("Přesunuli jste se do Těžké nepřátelské místnosti.");
                     break;
-                case 5: Player.Move(bossRoom);
+                case 5:
+                    Player.Move(bossRoom);
+                    Console.WriteLine("Přesunuli jste se do Boss místnosti.");
+                    break;
+                default:
+                    Console.WriteLine("Neplatná volba.");
                     break;
             }
-            Console.Clear();
-                
         }
-        else
-        {
-            Console.WriteLine("Tak si asi totalni dement prosim stiskni sparvne tlacitko");
-        }
-            
-        while (action > 3)
-        {
-           
-            Console.Clear();
-            action = Convert.ToInt32(Console.ReadLine());
-            if (action == 1)
-            {
-                
-                Player.Heal(Potions.big);
-                Console.WriteLine("You healed");
-                
-            }
-            else if (action == 2)
-            {
-                    
-               
-                Player.Attack();
-               
-               
-            }
-            else if (action == 3)
-            {
-              
-                
-            }
-            else
-            {
-                Console.WriteLine("Tak si asi totalni dement prosim stiskni sparvne tlacitko");
-            }
-            
-        }
-        
-        
-    }
     public Player GetPlayer()
     {
         return Player;

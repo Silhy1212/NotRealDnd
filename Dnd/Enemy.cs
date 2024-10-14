@@ -8,6 +8,7 @@
         private int maxHP;
         private float critRate;
         private int critChance;
+        public Boolean Isliving = true;
 
         public Enemy(string name, int attackDamage, int hp, int maxHp, float critRate, int critChance)
         {
