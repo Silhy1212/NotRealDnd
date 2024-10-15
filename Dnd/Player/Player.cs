@@ -174,7 +174,6 @@ public void Heal(Enum potionType)
         Console.WriteLine("=======================================");
     }
 }
-
         public static class Factory
         {
             public static Player CreateGnom()

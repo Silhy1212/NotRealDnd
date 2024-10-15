@@ -3,11 +3,11 @@
 public class ActionInput
 {
     private Player Player;
-    private Room startRoom;
+    private Room randomRoom1;
+    private Room randomRoom2;
+    private Room randomRoom3;
     private Room bossRoom;
-    private Room ezRoom;
-    private Room midRoom;
-    private Room hardRoom;
+    private Room startRoom;
     
 
     public void PlayerInput()
@@ -66,9 +66,9 @@ public class ActionInput
         public void RoomsInput()
         {
             startRoom = Room.RoomFactory.CreateHub();
-            ezRoom = Room.RoomFactory.CreateRandomRoom1();
-            midRoom = Room.RoomFactory.CreateRandomRoom2();
-            hardRoom = Room.RoomFactory.CreateRandomRoom3();
+            randomRoom1 = Room.RoomFactory.CreateRandomRoom1();
+            randomRoom2 = Room.RoomFactory.CreateRandomRoom2();
+            randomRoom3 = Room.RoomFactory.CreateRandomRoom3();
             bossRoom = Room.RoomFactory.CreateBossRoom();
         }
 
@@ -101,6 +101,16 @@ public class ActionInput
                     break;
                 case 2:
                     Player.Attack();
+                    Enemy enemy = bossRoom.GetEnemy();
+                    if (enemy.HP <=0)
+                    {
+                        Console.Clear();
+                        Console.WriteLine("=======================================");
+                        Console.WriteLine("Congratulations, you have won the game");
+                        Console.WriteLine("=======================================");
+                        Environment.Exit(0);
+                        
+                    }
                     break;
                 case 3:
                     HandleMovement();
@@ -158,9 +168,9 @@ public class ActionInput
             Console.WriteLine("=======================================");
             Console.WriteLine("DO KTERÉ MÍSTNOSTI SE CHCETE PŘESUNOUT?");
             Console.WriteLine("1 - Startovní místnost");
-            Console.WriteLine("2 - Lehčí nepřátelská místnost");
-            Console.WriteLine("3 - Střední nepřátelská místnost");
-            Console.WriteLine("4 - Těžká nepřátelská místnost");
+            Console.WriteLine("2 - První místnost");
+            Console.WriteLine("3 - Druhá místnost");
+            Console.WriteLine("4 - Třetí místnost");
             Console.WriteLine("5 - Boss místnost");
             Console.WriteLine("=======================================");
 
@@ -174,15 +184,15 @@ public class ActionInput
                     Console.WriteLine("Přesunuli jste se do Startovní místnosti.");
                     break;
                 case 2:
-                    Player.Move(ezRoom);
+                    Player.Move(randomRoom1);
                     Console.WriteLine("Přesunuli jste se do Lehčí nepřátelské místnosti.");
                     break;
                 case 3:
-                    Player.Move(midRoom);
+                    Player.Move(randomRoom2);
                     Console.WriteLine("Přesunuli jste se do Střední nepřátelské místnosti.");
                     break;
                 case 4:
-                    Player.Move(hardRoom);
+                    Player.Move(randomRoom3);
                     Console.WriteLine("Přesunuli jste se do Těžké nepřátelské místnosti.");
                     break;
                 case 5:

@@ -16,7 +16,7 @@ public class FinalInput
     public void OngoingInput()
     {
         
-        while (Player.HP > 0)
+        while (Player.HP > 0 )
         {
            
             if(ActionInput == null) ActionInput = new ActionInput();

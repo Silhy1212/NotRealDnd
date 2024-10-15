@@ -40,10 +40,11 @@
                 Enemy randomEnemy = CreateRandomEnemy();
                 return new Room(randomEnemy);
             }
-            public static Room CreateRandomRoom4()
+
+            public static Room CreateBossRoom()
             {
-                Enemy randomEnemy = CreateRandomEnemy();
-                return new Room(randomEnemy);
+                Enemy enemy = Enemy.Factory.CreateDragon();
+                return new Room(enemy);
             }
 
             public static Room CreateHub()
@@ -53,7 +54,7 @@
 
             private static Enemy CreateRandomEnemy()
             {
-                int enemyType = _random.Next(4); 
+                int enemyType = _random.Next(2); 
 
                 switch (enemyType)
                 {
@@ -63,8 +64,6 @@
                         return Enemy.Factory.CreateKnight();
                     case 2:
                         return Enemy.Factory.CreateArcher();
-                    case 3:
-                        return Enemy.Factory.CreateDragon();
                     default:
                         return null; 
                 }
