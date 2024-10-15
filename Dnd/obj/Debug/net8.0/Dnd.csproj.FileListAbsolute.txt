@@ -28,3 +28,18 @@ C:\Users\matej.silhan\Desktop\NotRealDnd\Dnd\obj\Debug\net8.0\refint\Dnd.dll
 C:\Users\matej.silhan\Desktop\NotRealDnd\Dnd\obj\Debug\net8.0\Dnd.pdb
 C:\Users\matej.silhan\Desktop\NotRealDnd\Dnd\obj\Debug\net8.0\Dnd.genruntimeconfig.cache
 C:\Users\matej.silhan\Desktop\NotRealDnd\Dnd\obj\Debug\net8.0\ref\Dnd.dll
+C:\Users\matej silhan\OneDrive\Plocha\NotRealDnd\Dnd\bin\Debug\net8.0\Dnd.exe
+C:\Users\matej silhan\OneDrive\Plocha\NotRealDnd\Dnd\bin\Debug\net8.0\Dnd.deps.json
+C:\Users\matej silhan\OneDrive\Plocha\NotRealDnd\Dnd\bin\Debug\net8.0\Dnd.runtimeconfig.json
+C:\Users\matej silhan\OneDrive\Plocha\NotRealDnd\Dnd\bin\Debug\net8.0\Dnd.dll
+C:\Users\matej silhan\OneDrive\Plocha\NotRealDnd\Dnd\bin\Debug\net8.0\Dnd.pdb
+C:\Users\matej silhan\OneDrive\Plocha\NotRealDnd\Dnd\obj\Debug\net8.0\Dnd.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\matej silhan\OneDrive\Plocha\NotRealDnd\Dnd\obj\Debug\net8.0\Dnd.AssemblyInfoInputs.cache
+C:\Users\matej silhan\OneDrive\Plocha\NotRealDnd\Dnd\obj\Debug\net8.0\Dnd.AssemblyInfo.cs
+C:\Users\matej silhan\OneDrive\Plocha\NotRealDnd\Dnd\obj\Debug\net8.0\Dnd.csproj.CoreCompileInputs.cache
+C:\Users\matej silhan\OneDrive\Plocha\NotRealDnd\Dnd\obj\Debug\net8.0\Dnd.sourcelink.json
+C:\Users\matej silhan\OneDrive\Plocha\NotRealDnd\Dnd\obj\Debug\net8.0\Dnd.dll
+C:\Users\matej silhan\OneDrive\Plocha\NotRealDnd\Dnd\obj\Debug\net8.0\refint\Dnd.dll
+C:\Users\matej silhan\OneDrive\Plocha\NotRealDnd\Dnd\obj\Debug\net8.0\Dnd.pdb
+C:\Users\matej silhan\OneDrive\Plocha\NotRealDnd\Dnd\obj\Debug\net8.0\Dnd.genruntimeconfig.cache
+C:\Users\matej silhan\OneDrive\Plocha\NotRealDnd\Dnd\obj\Debug\net8.0\ref\Dnd.dll

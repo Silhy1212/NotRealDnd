@@ -5,7 +5,7 @@
         public string Name;
         public int attackDamage;
         public int HP;
-        private int maxHP;
+        public int maxHP;
         private float critRate;
         private int critChance;
         public Boolean Isliving = true;
@@ -40,7 +40,7 @@
 
             public static Enemy CreateDragon()
             {
-                return new Enemy("Drak", 5, 100, 100, 100, 25);
+                return new Enemy("Drak", 10, 100, 100, 100, 25);
             }
         }
     }

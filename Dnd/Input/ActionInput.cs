@@ -102,6 +102,11 @@ public class ActionInput
                 case 2:
                     Player.Attack();
                     Enemy enemy = bossRoom.GetEnemy();
+                    if (enemy.HP == (enemy.maxHP)/2)
+                    {
+                        enemy.attackDamage *=  2;
+                        Console.WriteLine("Drak začíná utočit vážne, zvýšil se mu o dvakrát více damage");
+                    }
                     if (enemy.HP <=0)
                     {
                         Console.Clear();

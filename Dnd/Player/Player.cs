@@ -82,6 +82,7 @@
                 Console.WriteLine("=======================================");
                 Console.WriteLine("GAME OVER!");
                 Console.WriteLine("=======================================");
+                Environment.Exit(0);
             }
         }
     }
@@ -178,12 +179,12 @@ public void Heal(Enum potionType)
         {
             public static Player CreateGnom()
             {
-                return new Player(Room.RoomFactory.CreateHub(), 20, 20, 30, 10, 6, "Gnom");
+                return new Player(Room.RoomFactory.CreateHub(), 6, 20, 30, 10, 6, "Gnom");
             }
 
             public static Player CreateKouzelnik()
             {
-                return new Player(Room.RoomFactory.CreateHub(), 20, 20, 30, 10, 6, "Kouzelník");
+                return new Player(Room.RoomFactory.CreateHub(), 5, 20, 30, 10, 6, "Kouzelník");
             }
             public static Player CreateRytir()
             {
