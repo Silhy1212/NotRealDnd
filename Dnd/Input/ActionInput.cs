@@ -66,9 +66,9 @@ public class ActionInput
         public void RoomsInput()
         {
             startRoom = Room.RoomFactory.CreateHub();
-            ezRoom = Room.RoomFactory.CreateEnemyRoom();
-            midRoom = Room.RoomFactory.CreateEnemyRoom();
-            hardRoom = Room.RoomFactory.CreateEnemyRoom();
+            ezRoom = Room.RoomFactory.CreateRandomRoom1();
+            midRoom = Room.RoomFactory.CreateRandomRoom2();
+            hardRoom = Room.RoomFactory.CreateRandomRoom3();
             bossRoom = Room.RoomFactory.CreateBossRoom();
         }
 
@@ -80,11 +80,13 @@ public class ActionInput
             Console.WriteLine("1 - Vyhealovat se");
             Console.WriteLine("2 - Zautočit");
             Console.WriteLine("3 - Přesunout se do jiné místnosti");
+            Console.WriteLine("4 - Ukázat statistiky");
+            Console.WriteLine("5 - Ukázat inventář");
             Console.WriteLine("=======================================");
 
             int action = Convert.ToInt32(Console.ReadLine());
 
-            while (action < 1 || action > 3)
+            while (action < 1 || action > 5)
             {
                 Console.Clear();
                 Console.WriteLine("Neplatná volba, zkuste to znovu.");
@@ -102,6 +104,12 @@ public class ActionInput
                     break;
                 case 3:
                     HandleMovement();
+                    break;
+                case 4:
+                    Player.Stats();
+                    break;
+                case 5:
+                    Player.Inventory();
                     break;
             }
 
@@ -127,15 +135,16 @@ public class ActionInput
             {
                 case 1:
                     Player.Heal(Potions.small);
-                    Player.smallpotionCount--;
+                    
                     break;
                 case 2:
                     Player.Heal(Potions.medium);
-                    Player.mediumpotionCount--;
+                   
+                    
                     break;
                 case 3:
                     Player.Heal(Potions.big);
-                    Player.bigpotionCount--;
+                   
                     break;
                 default:
                     Console.WriteLine("Neplatná volba.");

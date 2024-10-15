@@ -25,12 +25,22 @@
         {
             public static Enemy CreateOger()
             {
-                return new Enemy("Oger", 5, 50, 100, 100, 5);
+                return new Enemy("Oger", 5, 15, 20, 100, 1);
             }
-
-            public static Enemy CreateRichman()
+            
+            public static Enemy CreateKnight()
             {
-                return new Enemy("Richman", 5, 100, 100, 100, 5);
+                return new Enemy("Rytíř", 7, 30, 20, 100, 7);
+            }
+            public static Enemy CreateArcher()
+            {
+                return new Enemy("Lučištník", 5, 20, 20, 100, 15);
+            }
+            
+
+            public static Enemy CreateDragon()
+            {
+                return new Enemy("Drak", 5, 100, 100, 100, 25);
             }
         }
     }

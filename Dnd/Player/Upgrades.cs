@@ -43,7 +43,9 @@ public class Upgrades
             if (action == 1)
             {
                 Player.attackDamage = 7;
-                Console.WriteLine($"Tvůj attack damage je nyní {Player.attackDamage}");            }
+                Console.WriteLine($"Tvůj attack damage je nyní {Player.attackDamage}");
+                Player.Weapon = "Nůž";
+            }
             else if (action == 2)
             {
                 Player.attackDamage = Player.attackDamage;
@@ -63,6 +65,7 @@ public class Upgrades
             {
                 Player.attackDamage = 10;
                 Console.WriteLine($"Tvůj attack damage je nyní {Player.attackDamage}");
+                Player.Weapon = "Dýka";
             }
             else if (action == 2)
             {
@@ -81,7 +84,9 @@ public class Upgrades
             if (action == 1)
             {
                 Player.attackDamage = 15;
-                Console.WriteLine($"Tvůj attack damage je nyní {Player.attackDamage}");            }
+                Console.WriteLine($"Tvůj attack damage je nyní {Player.attackDamage}");
+                Player.Weapon = "Meč";
+            }
             else if (action == 2)
             {
                 Player.attackDamage = Player.attackDamage;
@@ -99,7 +104,9 @@ public class Upgrades
             if (action == 1)
             {
                 Player.attackDamage = 30;
-                Console.WriteLine($"Tvůj attack damage je nyní {Player.attackDamage}");            }
+                Console.WriteLine($"Tvůj attack damage je nyní {Player.attackDamage}");
+                Player.Weapon = "Necrosword";
+            }
             else if (action == 2)
             {
                 Player.attackDamage = Player.attackDamage;
